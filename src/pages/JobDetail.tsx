@@ -73,12 +73,12 @@ const JobDetail = () => {
       </div>
 
       <div className="flex flex-wrap gap-4 text-sm text-muted-foreground mb-8">
-        <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4" />{job.location}</span>
-        {job.salary_range && <span className="flex items-center gap-1.5"><DollarSign className="h-4 w-4" />{job.salary_range}</span>}
-        <span className="flex items-center gap-1.5"><Clock className="h-4 w-4" />{new Date(job.posted_at).toLocaleDateString()}</span>
+        <span className="flex items-center gap-1.5"><MapPin className="h-4 w-4 text-primary/70" />{job.location}</span>
+        {job.salary_range && <span className="flex items-center gap-1.5"><DollarSign className="h-4 w-4 text-success/70" />{job.salary_range}</span>}
+        <span className="flex items-center gap-1.5"><Clock className="h-4 w-4 text-accent/70" />{new Date(job.posted_at).toLocaleDateString()}</span>
       </div>
 
-      <Button size="lg" className="mb-8 w-full sm:w-auto text-base px-8" onClick={() => setApplyOpen(true)}>
+      <Button size="lg" className="mb-8 w-full sm:w-auto text-base px-8 shadow-lg shadow-primary/20" onClick={() => setApplyOpen(true)}>
         <Briefcase className="mr-2 h-4 w-4" /> Apply Now
       </Button>
 

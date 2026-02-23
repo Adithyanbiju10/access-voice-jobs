@@ -29,7 +29,9 @@ const Navbar = () => {
     <nav className="sticky top-0 z-50 border-b bg-card/80 backdrop-blur-md" role="navigation" aria-label="Main navigation">
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 font-heading text-xl font-bold text-primary" aria-label="AbilityJobs Home">
-          <Briefcase className="h-6 w-6" />
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-primary-foreground">
+            <Briefcase className="h-4 w-4" />
+          </div>
           <span>AbilityJobs</span>
         </Link>
 

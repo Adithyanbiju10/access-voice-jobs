@@ -1,4 +1,4 @@
-import { Accessibility, Heart, Users, Globe } from 'lucide-react';
+import { Accessibility, Heart, Users, Globe, Sparkles } from 'lucide-react';
 import { useVoice } from '@/contexts/VoiceContext';
 import { useEffect } from 'react';
 
@@ -10,10 +10,10 @@ const stats = [
 ];
 
 const values = [
-  { icon: Accessibility, title: 'Accessibility First', desc: 'Every feature is designed with accessibility as the primary concern, not an afterthought.' },
-  { icon: Heart, title: 'Inclusive by Design', desc: 'We work only with employers committed to creating truly inclusive workplaces.' },
-  { icon: Users, title: 'Community Driven', desc: 'Built by and for people with disabilities, with continuous community feedback.' },
-  { icon: Globe, title: 'Equal Opportunity', desc: 'We believe everyone deserves equal access to meaningful employment.' },
+  { icon: Accessibility, title: 'Accessibility First', desc: 'Every feature is designed with accessibility as the primary concern, not an afterthought.', iconColor: 'text-primary', bg: 'bg-primary/10' },
+  { icon: Heart, title: 'Inclusive by Design', desc: 'We work only with employers committed to creating truly inclusive workplaces.', iconColor: 'text-destructive', bg: 'bg-destructive/10' },
+  { icon: Users, title: 'Community Driven', desc: 'Built by and for people with disabilities, with continuous community feedback.', iconColor: 'text-success', bg: 'bg-success/10' },
+  { icon: Globe, title: 'Equal Opportunity', desc: 'We believe everyone deserves equal access to meaningful employment.', iconColor: 'text-accent-foreground', bg: 'bg-accent/10' },
 ];
 
 const About = () => {
@@ -49,10 +49,10 @@ const About = () => {
       <section className="container py-16 md:py-24">
         <h2 className="font-heading text-2xl font-bold text-center mb-12">Our Values</h2>
         <div className="grid gap-6 sm:grid-cols-2">
-          {values.map(({ icon: Icon, title, desc }) => (
-            <div key={title} className="rounded-xl border bg-card p-6 flex gap-4">
-              <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                <Icon className="h-6 w-6 text-primary" />
+          {values.map(({ icon: Icon, title, desc, iconColor, bg }) => (
+            <div key={title} className="rounded-xl border bg-card p-6 flex gap-4 transition-all hover:shadow-lg hover:shadow-primary/5">
+              <div className={`flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-lg ${bg}`}>
+                <Icon className={`h-6 w-6 ${iconColor}`} />
               </div>
               <div>
                 <h3 className="font-heading font-semibold mb-1">{title}</h3>
